@@ -45,9 +45,9 @@ Dies ist die Hauptfunktion des Programms. Sie fordert den Benutzer auf, Werte f√
 ## Beispiel
 
 ```
-Gebe den Wert von m ein: 101
-Gebe den Wert von e ein: 21
-Gebe den Wert von w ein: 8
+Gib m: 101
+Gib e: 21
+Gib w: 8
 
 Gegeben:
 m = 101

@@ -61,9 +61,10 @@ def calculate_phi(m):
     return phi
 
 def main():
-    m = int(input("Gebe den Wert von m ein: "))
-    e = int(input("Gebe den Wert von e ein: "))
-    w = int(input("Gebe den Wert von w ein: "))
+    m = int(input("Gib m: "))
+    e = int(input("Gib e: "))
+    w = int(input("Gib w: "))
+    
     print(f"\n")
 
     phi_m = calculate_phi(m)
