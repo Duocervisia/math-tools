@@ -21,15 +21,6 @@ def extended_gcd(a, b):
 def onlyEA():
     a = int(input("Gib a: "))
     b = int(input("Gib b: "))
-    
-    print(f"\n")
-
-    print("Gegeben:")
-    print(f"a = {a}")
-    print(f"b = {b}")
-
-    print(f"\n")
-    print(f"Lösung:")
 
     print(f"\n")
 
