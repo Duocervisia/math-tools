@@ -24,7 +24,9 @@ def print_schedule(schedule):
         print()
 
 
+v = int(input("Gib v (= wie viele Teams): "))
+
 # Beispiel für v = 8
-v = 8
+# v = 8
 schedule = generate_tournament_schedule(v)
 print_schedule(schedule)
