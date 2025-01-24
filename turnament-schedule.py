@@ -18,15 +18,13 @@ def generate_tournament_schedule(v):
 
 def print_schedule(schedule):
     for r, round_matches in enumerate(schedule):
-        print(f"Runde {r + 1}")
+        print(f"Runde/Tag {r + 1}")
         for match in round_matches:
             print(f"{match[0]} gegen {match[1]}")
         print()
 
 
-v = int(input("Gib v (= wie viele Teams): "))
-
-# Beispiel für v = 8
-# v = 8
+# Beispiel für v = 8 (v= wie viele Teams)
+v = 8
 schedule = generate_tournament_schedule(v)
 print_schedule(schedule)
