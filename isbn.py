@@ -1,4 +1,4 @@
-def calculate_isbn10_check_digit(isbn_partial):
+def calculate_isbn10_digit(isbn_partial, missing_digit_position):
     # Remove any hyphens from the input
     isbn_partial = isbn_partial.replace("-", "")
     
@@ -8,20 +8,39 @@ def calculate_isbn10_check_digit(isbn_partial):
     
     # Calculate the check digit
     total = 0
+    missing_digit_passed = False
     for i, digit in enumerate(isbn_partial):
-        print(f"{i+1}x{digit}", end=" + ")
-        total += (i + 1) * int(digit)
-    print(f"{10} x c10 = 0 mod 11")
-    check_digit = total % 11
-    print(f"{total} + 10 x c10 = 0 mod 11")
-    if check_digit == 10:
-        check_digit = 'X'
-    print(f"c10 = {check_digit}")
+        if i == missing_digit_position - 1:
+            print(f"{i+1}xc{i+1}", end=" + ")
+            missing_digit_passed = True
+        if digit == 'X':
+            digit = 10
+        if missing_digit_passed:
+            print(f"{i+2}x{digit}", end=" + ")
+            total += (i + 2) * int(digit)
+        else:
+            print(f"{i+1}x{digit}", end=" + ")
+            total += (i + 1) * int(digit)  
+
+    if missing_digit_position == 10:
+        print(f"10xc10", end=" ")
+
+
+    print(f" = 0 mod 11")
+    print(f"{total} + {missing_digit_position} x c{missing_digit_position} = 0 mod 11")
     
-    return str(check_digit)
+    digit = 0
+    for i in range(11):
+        if (total + missing_digit_position * i) % 11 == 0:
+            digit = i
+            break
+    if digit == 10:
+        digit = 'X'
+
+    return str(digit)
 
 # Example usage
-isbn_partial = "3-05-501517"
-check_digit = calculate_isbn10_check_digit(isbn_partial)
-isbn_complete = isbn_partial + "-" + check_digit
-print("Complete ISBN-10:", isbn_complete)
+isbn_partial = "3-05-501517-"
+missing_digit_position = 10
+digit = calculate_isbn10_digit(isbn_partial, missing_digit_position)
+print("Fehlende Zahl:", digit)
