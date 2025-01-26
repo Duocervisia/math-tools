@@ -1,4 +1,4 @@
-def calculate_isbn10_check_digit(isbn_partial):
+def calculate_isbn10_digit(isbn_partial, missing_digit_position):
     # Remove any hyphens from the input
     isbn_partial = isbn_partial.replace("-", "")
     
@@ -8,6 +8,7 @@ def calculate_isbn10_check_digit(isbn_partial):
     
     # Calculate the check digit
     total = 0
+    missing_digit_passed = False
     for i, digit in enumerate(isbn_partial):
         print(f"{i+1}*{digit}", end=" + ")
         total += (i + 1) * int(digit)
