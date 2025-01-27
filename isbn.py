@@ -1,4 +1,4 @@
-def calculate_isbn10_digit(isbn_partial, missing_digit_position):
+def calculate_isbn10_check_digit(isbn_partial):
     # Remove any hyphens from the input
     isbn_partial = isbn_partial.replace("-", "")
     

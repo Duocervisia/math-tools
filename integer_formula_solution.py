@@ -13,7 +13,7 @@ def print_matrix(matrix):
         print(row)
     print()
 
-# a) Calculate the gcd of 2406 and 654
+# a) Calculate the gcd of 2406 and 654 (=größter gemeinsamer Teiler/ ggT)
 a = 2406    
 b = 654
 result = 24
